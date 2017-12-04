@@ -5,6 +5,7 @@ public class HelloWorld {
 	
 	System.out.println("Hi ! I am testing the configuration");
 	System.out.println(" Just checking");
+	System.out.println(" Just checking twice");
 
     }
 }	
