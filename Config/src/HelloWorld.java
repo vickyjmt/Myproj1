@@ -1,29 +1,26 @@
-import java.awt.Component;
-import java.util.StringTokenizer;
-import javax.swing.*;
+import java.util.Date;
+import java.util.Enumeration;
+import java.util.Hashtable;
 
-/**
- * JOptionPane showInputDialog example #1.
- * A simple showInputDialog example.
- * @author alvin alexander, http://alvinalexander.com
- */
-public class HelloWorld
-{
-  public static void main(String[] args)
-  {
-    // a jframe here isn't strictly necessary, but it makes the example a little more real
-    JFrame frame = new JFrame("InputDialog Example #1");
-    String str = null;
+public class HelloWorld {
+  public static void main(String[] args) {
+    String data;
+    String msg;
 
-	  StringTokenizer st1 = new StringTokenizer("This is an unplayable wicket");
+    Hashtable h = new Hashtable(20);
 
-		      for (; st1.hasMoreTokens();)
-		      {
-		    	  str=st1.nextToken();
-		    	  System.out.println(str);
-		      }
-    // get the user's input. note that if they press Cancel, 'name' will be null
-   // System.out.printf("The user's name is '%s'.\n", name);
-    System.exit(0);
+   h.put("one", new Integer(1));
+   h.put("name", "A");
+   h.put("date", new Date());
+   h.put("one", new Integer(4));
+
+    Enumeration e = h.keys();
+    
+    while (e.hasMoreElements())
+      System.out.println(e.nextElement());
+
+    e = h.elements();
+    while (e.hasMoreElements())
+      System.out.println(e.nextElement());
   }
 }
